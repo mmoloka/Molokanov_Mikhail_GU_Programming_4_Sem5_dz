@@ -17,6 +17,7 @@ public class task_2_dz {
         System.out.println("Введите имя владельца: ");
         String name = input.next();
         getTelNumber(hm, surname + " " + name);
+        input.close();
 
     }
 
@@ -34,8 +35,10 @@ public class task_2_dz {
 
     private static void getTelNumber(Map<String, String> hm, String person) {
         for (var item : hm.entrySet()) {
-            if (item.getValue().equals(person)) System.out.println(item.getKey());
-        if(!(hm.containsValue(person))) System.out.println("Такого владельца в справочнике нет");
+            if (item.getValue().equals(person))
+                System.out.println(item.getKey());
+            if (!(hm.containsValue(person)))
+                System.out.println("Такого владельца в справочнике нет");
         }
     }
 }
